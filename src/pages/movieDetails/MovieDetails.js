@@ -27,6 +27,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [data, setData] = useState([]);
   const location = useLocation();
+  let { state } = useLocation();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -60,8 +61,12 @@ const MovieDetails = () => {
       </MovieInfo>
       <Additional>
         <p>Additional Information</p>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Review</Link>
+        <Link state={{ from: state.from }} to="cast">
+          Cast
+        </Link>
+        <Link state={{ from: state.from }} to="reviews">
+          Review
+        </Link>
       </Additional>
       <Outlet />
     </Cont>
