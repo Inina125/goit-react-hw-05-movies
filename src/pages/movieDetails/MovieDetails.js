@@ -61,10 +61,10 @@ const MovieDetails = () => {
       </MovieInfo>
       <Additional>
         <p>Additional Information</p>
-        <Link state={{ from: state.from }} to="cast">
+        <Link state={{ from: state?.from || '/' }} to="cast">
           Cast
         </Link>
-        <Link state={{ from: state.from }} to="reviews">
+        <Link state={{ from: state?.from || '/' }} to="reviews">
           Review
         </Link>
       </Additional>
